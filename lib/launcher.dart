@@ -4,12 +4,13 @@ import 'package:diskominfo/constans.dart';
 import 'package:flutter/material.dart';
 import 'package:diskominfo/users/landingpage.dart' as users;
 
+
 class launcherpage extends StatefulWidget {
   @override
   State<launcherpage> createState() => _launcherpageState();
 }
 
-class _launcherpageState extends State<launcherpage> {
+  class _launcherpageState extends State<launcherpage> {
 
   @override
   void initState() {
@@ -21,19 +22,18 @@ class _launcherpageState extends State<launcherpage> {
     super.dispose();
   }  
     
-    startLaunching() async {
-    var duration = const Duration(seconds: 3);
+startLaunching() async {
+    var duration = const Duration(seconds: 4);
     return new Timer(duration, () {
       Navigator.of(context)
-             .pushReplacement(new MaterialPageRoute(builder: () =>
-            new users.landingpage(),
-          ),);
-    },);
-
-  }
+          .pushReplacement(new MaterialPageRoute(builder: (_) =>
+       new users.landingpage()));
+    });
+}
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
+       body: Container(
           padding: EdgeInsets.symmetric(horizontal: 20),
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
@@ -69,4 +69,4 @@ class _launcherpageState extends State<launcherpage> {
         ),
         );
   }
-}
+  }
